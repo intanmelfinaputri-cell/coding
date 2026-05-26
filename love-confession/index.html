@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kiyo - Sebuah Cerita Cinta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animasi Love Background -->
+    <div class="love-background">
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+        <div class="love">❤</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <button class="nav-btn active" onclick="showSection('story')">💌 Cerita Kami</button>
+        <button class="nav-btn" onclick="showSection('confession')">💕 Pertanyaan</button>
+        <button class="nav-btn" onclick="showSection('games')">🎮 Games</button>
+    </nav>
+
+    <!-- Section Cerita -->
+    <section id="story" class="section active">
+        <div class="container">
+            <h1 class="title">Untuk Kiyo Tercinta</h1>
+            <div class="story-box">
+                <div class="story-content">
+                    <h2>Pertemuan Pertama</h2>
+                    <p>Hari itu, saat pertama kali aku melihatmu, duniaku tiba-tiba berwarna. Entah bagaimana caranya, mata mu yang hangat langsung mencuri perhatianku. Aku ingat setiap detail - senyuman mu yang tulus, suara mu yang lembut, dan cara mu memandang sesuatu dengan penuh rasa ingin tahu.</p>
+                    
+                    <h2>Waktu Berubah Menjadi Emas</h2>
+                    <p>Setiap hari yang aku habiskan bersamu menjadi berkah tersendiri. Dari percakapan singkat hingga momen-momen berharga yang ita lalui bersama, semuanya terasa sempurna. Aku belajar bahwa cinta bukan hanya perasaan, melainkan keputusan untuk terus memilih seseorang setiap hari.</p>
+                    
+                    <h2>Kedekatan yang Berarti</h2>
+                    <p>Kini kita semakin dekat, dan aku menyadari bahwa hatiku telah sepenuhnya milikmu. Setiap tawa mu adalah melodi terindah bagi telingaku. Setiap sentuhan tanganmu membuat jantungku berlari lebih cepat. Kamu bukan hanya mimpi yang indah, tetapi kenyataan yang lebih indah dari apapun.</p>
+                    
+                    <h2>Janji untuk Selamanya</h2>
+                    <p>Kiyo, aku ingin menghabiskan waktu denganmu - hari ini, esok hari, dan seterusnya. Bersama mu, aku menemukan makna sebenarnya dari kebahagiaan. Aku bersumpah untuk menjaga hatimu, menghargai setiap momen bersama, dan mencintaimu dengan sepenuh sepenuh hatiku.</p>
+                    
+                    <p style="margin-top: 30px; font-size: 1.3em; color: #ff1493; font-weight: bold; text-align: center;">Kamu adalah alasan mengapa aku percaya pada cinta sejati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pertanyaan -->
+    <section id="confession" class="section">
+        <div class="container">
+            <div class="confession-box">
+                <h2 class="confession-question">Maukah kamu jadi pacar mas? 💕</h2>
+                <div class="button-container">
+                    <button class="btn btn-yes" onclick="answerYes()">YES ❤</button>
+                    <button class="btn btn-no" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">NO 😢</button>
+                </div>
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <h2>🎉 YESSS!!! 🎉</h2>
+                    <p>Aku sangat bahagia! Terima kasih telah memilihku, Kiyo sayang!</p>
+                    <div class="celebration">💕✨🎊💕✨🎊💕</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Games -->
+    <section id="games" class="section">
+        <div class="container">
+            <h1 class="title">🎮 Game Romantis untuk Kiyo</h1>
+            
+            <div class="games-grid">
+                <!-- Game 1: Cari Nama Kiyo -->
+                <div class="game-card">
+                    <h3>🔍 Cari Nama "KIYO"</h3>
+                    <p>Temukan nama Kiyo yang tersembunyi di antara huruf-huruf!</p>
+                    <div class="word-search-container">
+                        <div id="wordSearch" class="word-search"></div>
+                    </div>
+                    <p id="wordSearchResult" style="text-align: center; margin-top: 10px;"></p>
+                </div>
+
+                <!-- Game 2: Memory Match -->
+                <div class="game-card">
+                    <h3>💝 Memory Match</h3>
+                    <p>Temukan pasangan emoji cinta!</p>
+                    <div class="memory-game" id="memoryGame"></div>
+                    <p id="memoryResult" style="text-align: center; margin-top: 10px;"></p>
+                </div>
+
+                <!-- Game 3: Quiz Romantis -->
+                <div class="game-card">
+                    <h3>💕 Quiz Romantis</h3>
+                    <p>Jawab pertanyaan romantis tentang cinta!</p>
+                    <div id="quizContainer" class="quiz-container"></div>
+                    <p id="quizResult" style="text-align: center; margin-top: 10px;"></p>
+                </div>
+
+                <!-- Game 4: Tebak Angka Cinta -->
+                <div class="game-card">
+                    <h3>🔢 Tebak Angka Cinta</h3>
+                    <p>Tebak angka dari 1 sampai 10, hadiah adalah cinta! ❤</p>
+                    <div class="guess-game">
+                        <input type="number" id="guessInput" min="1" max="10" placeholder="Masukkan angka...">
+                        <button onclick="guessNumber()">Tebak!</button>
+                        <p id="guessResult" style="margin-top: 10px;"></p>
+                    </div>
+                </div>
+
+                <!-- Game 5: Hitung Bulan Bersama -->
+                <div class="game-card">
+                    <h3>📅 Hitung Cinta</h3>
+                    <p>Berapa lama kita sudah bersama?</p>
+                    <div class="love-counter">
+                        <input type="date" id="startDate" onchange="calculateLoveTime()">
+                        <p id="loveCounter" style="margin-top: 15px; font-size: 1.2em; color: #ff1493;"></p>
+                    </div>
+                </div>
+
+                <!-- Game 6: Rangkai Kata Cinta -->
+                <div class="game-card">
+                    <h3>✍️ Rangkai Kata Cinta</h3>
+                    <p>Susun kalimat romantis dengan benar!</p>
+                    <div class="word-arrange">
+                        <div id="availableWords" class="available-words"></div>
+                        <div id="arrangedWords" class="arranged-words" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <button onclick="checkArrangement()">Cek Jawaban</button>
+                        <p id="arrangeResult" style="margin-top: 10px;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
