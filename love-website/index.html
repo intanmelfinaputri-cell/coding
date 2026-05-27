@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kiyo Tercinta ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header dengan Floating Hearts -->
+        <div class="floating-hearts">
+            <span class="heart">❤️</span>
+            <span class="heart">💕</span>
+            <span class="heart">💖</span>
+            <span class="heart">❤️</span>
+            <span class="heart">💗</span>
+            <span class="heart">❤️</span>
+            <span class="heart">💕</span>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="title">Untuk Kiyo Tercinta</h1>
+            <p class="date">Pertemuan Pertama: 4 Maret 🌸</p>
+
+            <!-- Love Messages -->
+            <div class="message-section">
+                <div class="message-box fade-in">
+                    <p class="message-text">
+                        "Dari hari pertama kita bertemu, hatimu sudah mengambil tempat istimewa di dalam hatiku. 
+                        Setiap senyumanmu adalah matahari yang menerangi hari-hariku yang gelap. Kiyo, kamu membuat hidupku terasa lebih bermakna."
+                    </p>
+                </div>
+
+                <div class="message-box fade-in" style="animation-delay: 0.5s;">
+                    <p class="message-text">
+                        "Jika cinta adalah bahasa, maka setiap tindakanku adalah 'I love you' untuk dirimu. 
+                        Mata indahmu membuat aku terlupa dengan segalanya, dan aku tidak ingin mengingat kembali. 
+                        Kamu adalah orang yang membuatku percaya pada cinta sejati."
+                    </p>
+                </div>
+
+                <div class="message-box fade-in" style="animation-delay: 1s;">
+                    <p class="message-text">
+                        "Kiyo, setiap hari yang aku lalui, aku hanya ingin bersama dirimu. Kehadiranmu seperti udara yang aku butuhkan untuk bernafas. 
+                        Senyumanmu adalah obat terbaik untuk segala kesedihanku. Aku tidak bisa membayangkan hidupku tanpamu."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Games Section -->
+            <div class="games-section">
+                <h2 class="section-title">🎮 Mari Main Game Bersama</h2>
+
+                <!-- Crossword -->
+                <div class="game-box">
+                    <h3>📝 Teka-Teki Silang (Cari nama aku dalam kisi ini!)</h3>
+                    <div class="crossword">
+                        <table class="crossword-table">
+                            <tr>
+                                <td>K</td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                            </tr>
+                            <tr>
+                                <td>Y</td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                            </tr>
+                            <tr>
+                                <td>O</td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                                <td class="empty"></td>
+                            </tr>
+                        </table>
+                        <p class="hint">⭐ Hint: Nama orang yang paling aku sayangi! Dibaca dari atas ke bawah di kolom pertama.</p>
+                        <button class="reveal-btn" onclick="revealCrossword()">Lihat Jawaban</button>
+                        <p id="crossword-answer" class="hidden-answer">✨ Jawaban: KIYO ✨</p>
+                    </div>
+                </div>
+
+                <!-- Riddle Game -->
+                <div class="game-box">
+                    <h3>🔍 Tebak Tebakan Romantis</h3>
+                    <div class="riddle-game">
+                        <p id="riddle" class="riddle-text"></p>
+                        <div class="riddle-options">
+                            <button class="riddle-btn" onclick="checkRiddle(this, true)"></button>
+                            <button class="riddle-btn" onclick="checkRiddle(this, false)"></button>
+                            <button class="riddle-btn" onclick="checkRiddle(this, false)"></button>
+                        </div>
+                        <p id="riddle-result" class="riddle-result"></p>
+                        <button class="next-btn" onclick="nextRiddle()">Soal Berikutnya →</button>
+                    </div>
+                </div>
+
+                <!-- Memory Game -->
+                <div class="game-box">
+                    <h3>🧩 Memory Game (Cocokkan Kartu Cinta!)</h3>
+                    <div class="memory-game">
+                        <div class="memory-grid" id="memory-grid"></div>
+                        <p id="memory-result" class="memory-result"></p>
+                        <button class="reset-btn" onclick="resetMemoryGame()">Main Lagi</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Game -->
+                <div class="game-box">
+                    <h3>💝 Quiz Tentang Kita</h3>
+                    <div class="quiz-game">
+                        <p id="quiz-question" class="quiz-text"></p>
+                        <div class="quiz-options" id="quiz-options"></div>
+                        <p id="quiz-result" class="quiz-result"></p>
+                        <button class="next-btn" onclick="nextQuiz()" style="display: none;" id="next-quiz-btn">Soal Berikutnya →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Question -->
+            <div class="question-section">
+                <h2 class="big-question">Bibi mau jadi pacar mas ga? 💕</h2>
+                <p class="question-subtitle">Pilih salah satu jawaban... tapi hati-hati! 😉</p>
+                <div class="button-container">
+                    <button class="yes-btn" onclick="handleYes()">YES! 💕</button>
+                    <button class="no-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">NO</button>
+                </div>
+                <p id="success-message" class="hidden">🎉 YESSS!!! Aku sangat bahagia! Terima kasih sudah mau menjadi pacarku, Kiyo tercinta! 💕✨</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
